@@ -48,24 +48,23 @@
                                      join boisson on boisson.id=menu.id_boisson
                                      join accompagnement on accompagnement.id=menu.id_accompagnement');
 
-            while($item = $statement->fetch()){
+            $tabMenu=$statement->fetchAll(); 
 
+            for($i=0;$i<count($tabMenu);$i++)
+            { 
+              echo'<div class="col-sm-6 col-md-4">
 
-              echo '                     
-                            <div class="col-sm-6 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../images/'.$tabMenu[$i]['photo'].'" class="card-img-top" alt="menu '.$tabMenu[$i]['0'].'">
+                        <div><strong>'.$tabMenu[$i]['2'].' €</strong></div>
+                        <div class="card-body">
+                            <h5 class="card-title">'.$tabMenu[$i]['1'].'</h5>
+                            <p class="card-text">'.$tabMenu[$i]['8'].' - '.$tabMenu[$i]['12'].' - '.$tabMenu[$i]['15'].'</p>
+                            <a href="#" class="btn btn-primary">commander</a>
+                        </div>
+                    </div>
 
-                                <div class="card" style="width: 18rem;">
-                                    <img src="../images/'.$item['photo'].'" class="card-img-top" alt="menu '.$item['0'].'">
-                                    <div><strong>'.$item['2'].' €</strong></div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">'.$item['1'].'</h5>
-                                        <p class="card-text">'.$item['8'].' - '.$item['12'].' - '.$item['15'].'</p>
-                                        <a href="#" class="btn btn-primary">commander</a>
-                                    </div>
-                                </div>
-
-                             </div>';
-
+                  </div>'; 
             }
 
           ?>
