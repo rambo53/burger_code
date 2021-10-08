@@ -49,22 +49,21 @@
                                      join accompagnement on accompagnement.id=menu.id_accompagnement');
 
             $tabMenu=$statement->fetchAll(); 
-
-            for($i=0;$i<count($tabMenu);$i++)
-            { 
+                          
+            foreach ($tabMenu as $menu => $value) {
               echo'<div class="col-sm-6 col-md-4">
 
                     <div class="card" style="width: 18rem;">
-                        <img src="../images/'.$tabMenu[$i]['photo'].'" class="card-img-top" alt="menu '.$tabMenu[$i]['0'].'">
-                        <div><strong>'.$tabMenu[$i]['2'].' €</strong></div>
+                        <img src="../images/'.$tabMenu[$menu]['photo'].'" class="card-img-top" alt="menu '.$tabMenu[$menu]['0'].'">
+                        <div><strong>'.$tabMenu[$menu]['2'].' €</strong></div>
                         <div class="card-body">
-                            <h5 class="card-title">'.$tabMenu[$i]['1'].'</h5>
-                            <p class="card-text">'.$tabMenu[$i]['8'].' - '.$tabMenu[$i]['12'].' - '.$tabMenu[$i]['15'].'</p>
+                            <h5 class="card-title">'.$tabMenu[$menu]['1'].'</h5>
+                            <p class="card-text">'.$tabMenu[$menu]['8'].' - '.$tabMenu[$menu]['12'].' - '.$tabMenu[$menu]['15'].'</p>
                             <a href="#" class="btn btn-primary">commander</a>
                         </div>
                     </div>
 
-                  </div>'; 
+                  </div>';
             }
 
           ?>
