@@ -1,8 +1,8 @@
 <?php
-require_once 'aliment.php';
-require_once 'burger.php';
-require_once 'accompagnement.php';
-require_once 'boisson.php';
+require_once 'aliment.class.php';
+require_once 'burger.class.php';
+require_once 'accompagnement.class.php';
+require_once 'boisson.class.php';
 
 
 class Menu{
